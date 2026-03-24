@@ -48,11 +48,15 @@ public class UseCase1PalindromeCheckerApp {
 
     /**
      * Checks whether the given string is a palindrome (case-insensitive).
+     * Returns false for null input; returns true for empty strings.
      *
      * @param str the string to check
-     * @return true if str is a palindrome, false otherwise
+     * @return true if str is a palindrome, false if str is null or not a palindrome
      */
     public static boolean isPalindrome(String str) {
+        if (str == null) {
+            return false;
+        }
         String normalized = str.toLowerCase();
         int left = 0;
         int right = normalized.length() - 1;
